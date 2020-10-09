@@ -5,7 +5,7 @@
  * @param {string} s
  * @return {number}
  */
-export var romanToInt = function(s,romans,numbers) {
+var romanToInt = function(s,romans,numbers) {
     if (s.length == 0)
         return 0
     var current = 0
