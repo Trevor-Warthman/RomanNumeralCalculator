@@ -7,15 +7,15 @@
 // - array of roman numerals 1-10,40,50,90,100,400,500,900,1000
 // - array of numbers same as above
 
-var intToRoman = function(num,romans,numbers)
+function intToRoman(num){
     if (num == 0){
         return ""
     }
-    var i = 15
+    let i = 15
     while (num - numbers[i] < 0){
         i--
     }
     num = num - numbers[i]
     current = romans[i]
-    return current + int_to_roman(num,romans,numbers)
-end
+    return (current + intToRoman(num))
+}
