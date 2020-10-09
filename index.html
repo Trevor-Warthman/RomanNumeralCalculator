@@ -13,7 +13,7 @@
     function detectTypeAndConvert(romans,numbers) {
       var inp = document.getElementById("inputText").value;
       var out = ""
-      if (isInteger(inp)){
+      if (Number.isInteger(inp)){
         out = intToRoman(parseInt(inp),romans,numbers)
       }
       else{
