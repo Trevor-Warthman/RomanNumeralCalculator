@@ -7,7 +7,7 @@
 // - array of roman numerals 1-10,40,50,90,100,400,500,900,1000
 // - array of numbers same as above
 
-function intToRoman(num){
+function intToRoman(num,romans,numbers){
     if (num == 0){
         return ""
     }
@@ -17,5 +17,5 @@ function intToRoman(num){
     }
     num = num - numbers[i]
     current = romans[i]
-    return (current + intToRoman(num))
+    return (current + intToRoman(num,romans,numbers))
 }
