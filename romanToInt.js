@@ -5,7 +5,7 @@
  * @param {string} s
  * @return {number}
  */
-var romanToInt = function(s) {
+var romanToInt = function(s,romans,numbers) {
     if (s.length == 0)
         return 0
     var current = 0
@@ -14,5 +14,5 @@ var romanToInt = function(s) {
         i--
     }
     s = s.substring(romans[i].length,s.length)
-    return (numbers[i] + romanToInt(s))
+    return (numbers[i] + romanToInt(s,romans,numbers))
 };
