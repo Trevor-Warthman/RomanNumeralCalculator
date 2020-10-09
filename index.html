@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
   <script>
+var romans = ["I","IV","V","VI","VII","VIII","IX","X","XL","L","XC","C","CD","D","CM","M"]
+var numbers = [1,4,5,6,7,8,9,10,40,50,90,100,400,500,900,1000]
+
 //Recursive Function which returns an integer's string roman numeral value
 // @param {Integer} num
 // @return {String}
@@ -22,6 +25,22 @@ function intToRoman(num,romans,numbers){
     current = romans[i]
     return (current + intToRoman(num,romans,numbers))
 }
+    
+function detectTypeAndConvert(romans,numbers) {
+    var inp = document.getElementById("inputText").value;
+    var out = ""
+    if (Number.isInteger(inp)){
+        out = intToRoman(parseInt(inp),romans,numbers)
+    }
+    else{
+      out = romanToInt(toUpperCase(inp),romans,numbers)
+    }
+    //else{
+    //  out = "Please enter a number or roman numeral between 1 and 4000."
+    //}
+    document.getElementById("demo").innerHTML = out;
+}
+
   </script>
   <body>
     <h3>Roman Numeral Calculator</h3>
