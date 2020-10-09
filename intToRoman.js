@@ -7,7 +7,7 @@
 // - array of roman numerals 1-10,40,50,90,100,400,500,900,1000
 // - array of numbers same as above
 
-export function intToRoman(num,romans,numbers){
+function intToRoman(num,romans,numbers){
     if (num == 0){
         return ""
     }
