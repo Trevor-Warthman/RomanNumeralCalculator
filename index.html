@@ -10,7 +10,7 @@ var numbers = [1,4,5,6,7,8,9,10,40,50,90,100,400,500,900,1000]
  * @param {string} s
  * @return {number}
  */
-var romanToInt = function(s,romans,numbers) {
+var romanToInt = function(s) {
     if (s.length == 0)
         return 0
     var current = 0
@@ -19,7 +19,7 @@ var romanToInt = function(s,romans,numbers) {
         i--
     }
     s = s.substring(romans[i].length,s.length)
-    return (numbers[i] + romanToInt(s,romans,numbers))
+    return (numbers[i] + romanToInt(s))
 };
 
 //Recursive Function which returns an integer's string roman numeral value
@@ -31,7 +31,7 @@ var romanToInt = function(s,romans,numbers) {
 // - array of roman numerals 1-10,40,50,90,100,400,500,900,1000
 // - array of numbers same as above
 
-function intToRoman(num,romans,numbers){
+function intToRoman(num){
     if (num == 0){
         return ""
     }
@@ -41,10 +41,10 @@ function intToRoman(num,romans,numbers){
     }
     num = num - numbers[i]
     current = romans[i]
-    return (current + intToRoman(num,romans,numbers))
+    return current + intToRoman(num)
 }
 //given numbers and romans above, get the input, make output or number or roman numerals based on input, place inside demo tag.
-function detectTypeAndConvert(romans,numbers) {
+function detectTypeAndConvert() {
     var inp = document.getElementById("inputText").value;
     var out = ""
     if (Number.isInteger(inp)){
