@@ -47,7 +47,8 @@ function intToRoman(num){
 function detectTypeAndConvert() {
     var inp = document.getElementById("inputText").value;
     var out = ""
-    if (Number.isInteger(inp)){
+    var hasNumber = /\d/
+    if (hasNumber.test(inp)){
         out = intToRoman(parseInt(inp),romans,numbers)
     }
     else{
