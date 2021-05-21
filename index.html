@@ -51,7 +51,7 @@ function detectTypeAndConvert() {
     if (hasNumber.test(inp)){
         out = intToRoman(parseInt(inp),romans,numbers)
     }
-    else if(inp == "Michael"){
+    else if(inp == "Michael".ignoreCase){
       out = "He was number one"
     }
     else{
